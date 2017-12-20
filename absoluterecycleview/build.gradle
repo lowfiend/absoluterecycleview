@@ -20,6 +20,12 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    lintOptions{
+        abortOnError false
+        checkReleaseBuilds false
+    }
+    packageBuildConfig(false)
 }
 
 dependencies {
@@ -32,3 +38,6 @@ dependencies {
     compile 'com.android.support:support-v4:26.1.0'
     compile 'com.android.support:recyclerview-v7:26.1.0'
 }
+
+
+apply from: "bintrayUpload.gradle"
